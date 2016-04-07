@@ -1,12 +1,13 @@
 
 
-  <form name="games">
+  
+  <%= form_tag '#', name: "games" do %>
     <table align="left" width:500px;">
         <tr>
-         <td align=right><input type="button" name="startButton" value="Click here to start a Match" onclick="newMatchUp();"></td>
+         <td align=right><%= button_tag "Click here to start the match", type: "button", name: "startButton", onclick:"newMatchUp();" %></td>
         </tr>
         <tr style="text-align:center; width:100%;" colspan="2">
-           <td align=right><input type="text" name="texter" size="20" disabled=true></td>
+           <td align=right><%= text_field_tag "texter", nil, size: 20, disabled: true %></td>
         </tr>
         <tr colspan="2">
           <td><label id="announce_title"></label></td>
@@ -48,5 +49,5 @@
       <% end %>
     </table>
   </center>
-  </form>
+  <% end %>
 
