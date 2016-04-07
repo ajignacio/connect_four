@@ -65,12 +65,12 @@ function switchTurns() {
     if (playerTurn == "player 1") {
       playerTurn = "player 2"
       playerTurnSpot.src = ply2Spot.src
-      document.games.texter.value = ply2Player + "'s turn."
+      document.getElementById('announce_turn').innerHTML = ply2Player + "'s turn"
     } 
     else {
       playerTurn = "player 1"
       playerTurnSpot.src = ply1Spot.src
-      document.games.texter.value = ply1Player + "'s turn."
+      document.getElementById('announce_turn').innerHTML = ply1Player + "'s turn"
     }
   }
 }
@@ -112,13 +112,13 @@ function askForNames() {
       ply2Player = "player 2"
     }
     if (whosFirst == "p" || whosFirst == "player 1" || whosFirst == ply1Player) {
-      document.games.texter.value = ply1Player + "'s turn."
+      document.getElementById('announce_turn').innerHTML = ply1Player + "'s turn"
       playerTurn = "player 2"
       switchTurns()
       whosFirst = "player 1"
     }
     else {
-      document.games.texter.value = ply2Player + "'s turn."
+      document.getElementById('announce_turn').innerHTML = ply2Player + "'s turn"
       playerTurn = "player 1"
       switchTurns()
       whosFirst = "player 2"
@@ -215,6 +215,7 @@ function newGame() {
 function newMatchUp() {
   if (confirm("Are you sure you want to Start a new match?")) {
     gameActive = 1
+    document.getElementById('sbutton').innerHTML = "Click here to restart the score from zero"
     rePlay()
     askForNames()
   }

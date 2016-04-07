@@ -1,16 +1,16 @@
 
-
-  
   <%= form_tag '#', name: "games" do %>
     <table align="left" width:500px;">
         <tr>
-         <td align=right><%= button_tag "Click here to start the match", type: "button", name: "startButton", onclick:"newMatchUp();" %></td>
+         <td align=right><%= button_tag "Click here to start the match", type: "button", id: "sbutton", name: "startButton", onclick:"newMatchUp();" %></td>
         </tr>
         <tr style="text-align:center; width:100%;" colspan="2">
-           <td align=right><%= text_field_tag "texter", nil, size: 20, disabled: true %></td>
+          <td align=right>
+            <label id='announce_turn'></label>
+          </td>
         </tr>
         <tr colspan="2">
-          <td><label id="announce_title"></label></td>
+          <td><label id='announce_title'></label></td>
         </tr>
         <tr>
           <td><label id="announce1"></label></td>
@@ -24,8 +24,12 @@
           <td valign="bottom" style="width:200px;"><b>Player 2</b></td> </td>
         </tr>
         <tr>
-          <td><input type="text" name="ply1ScoreBoard" size="3" disabled=true></td>
-          <td><input type ="text" name="ply2ScoreBoard" size="3" disabled=true></td>
+          <td>
+            <%= text_field_tag "ply1ScoreBoard", nil, size:5, disabled: true %>
+          </td>
+          <td>
+            <%= text_field_tag "ply2ScoreBoard", nil, size:5, disabled: true %>
+          </td>
         </tr>
     </table> 
    <center>
