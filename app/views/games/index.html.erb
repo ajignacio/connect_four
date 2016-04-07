@@ -1,0 +1,52 @@
+
+
+  <form name="games">
+    <table align="left" width:500px;">
+        <tr>
+         <td align=right><input type="button" name="startButton" value="Click here to start a Match" onclick="newMatchUp();"></td>
+        </tr>
+        <tr style="text-align:center; width:100%;" colspan="2">
+           <td align=right><input type="text" name="texter" size="20" disabled=true></td>
+        </tr>
+        <tr colspan="2">
+          <td><label id="announce_title"></label></td>
+        </tr>
+        <tr>
+          <td><label id="announce1"></label></td>
+          <td><label id="announce2"></label></td>
+        </tr>
+        <tr style="text-align:center; width:100%;" colspan="2">
+           <td><font class="score">SCORE:</font></td>
+        </tr>
+        <tr>
+    	  <td valign="bottom" style="width:200px;"><b>Player 1</b></td>
+          <td valign="bottom" style="width:200px;"><b>Player 2</b></td> </td>
+        </tr>
+        <tr>
+          <td><input type="text" name="ply1ScoreBoard" size="3" disabled=true></td>
+          <td><input type ="text" name="ply2ScoreBoard" size="3" disabled=true></td>
+        </tr>
+    </table> 
+   <center>
+    <table cellspacing="0" cellpading="0" border="0">
+      <tr> <!-- main row -->
+        <% @number_of_row.each do |row| %>
+          <td>
+            <%= link_to image_tag('transparent.png', alt: "", border: '0', height: '5px', width: '5px'), "javascript:void dropIt(#{row})" %>
+          </td>
+        <% end %>
+        
+      </tr>
+      <% (0..5).each do |brow| %>
+        <tr>
+          <% @number_of_row.each do |row| %>
+            <td>
+              <%= link_to image_tag('fillempty.gif', alt: "", border: '0', height: '50px', width: '50px'), "javascript:void dropIt(#{row})" %>
+            </td>
+          <% end %>
+        </tr>
+      <% end %>
+    </table>
+  </center>
+  </form>
+
